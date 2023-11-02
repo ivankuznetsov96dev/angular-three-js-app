@@ -14,7 +14,7 @@ export class CubeComponent implements OnInit, AfterViewInit {
   @Input() public rotationSpeedX: number = 0.005;
   @Input() public rotationSpeedY: number = 0.001;
   @Input() public size: number = 200;
-  @Input() public texture: string = "/assets/texture.jpg";
+  @Input() public texture: string = "assets/texture.jpg";
 
   //* Stage prop
   @Input() public cameraZ: number = 400;
@@ -88,6 +88,13 @@ export class CubeComponent implements OnInit, AfterViewInit {
   }
 
 
+  /**
+   * Start rendering loop
+   * Use canvas element
+   *
+   * @private
+   * @memberof CubeComponent
+   */
   private startRenderingLoop(): void {
     //*Render
     this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas });
